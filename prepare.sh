@@ -3,18 +3,23 @@ set -e
 
 git clone https://github.com/ivabus/urouter
 cd urouter
-curl -fsSL -o d https://raw.githubusercontent.com/ivabus/ivabus-dotfiles/main/init
-curl -fsSL -o s https://raw.githubusercontent.com/ivabus/asahi-opensuse/main/installer/bootstrap.sh
+curl -fsSL -o dotfiles https://raw.githubusercontent.com/ivabus/dotfiles/main/init
+curl -fsSL -o suse https://raw.githubusercontent.com/ivabus/asahi-opensuse/main/installer/bootstrap.sh
+curl -fsSL -o env https://raw.githubusercontent.com/ivabus/dotfiles/main/init_env
 
 cat >> alias.json <<EOF
 [
 	{
 		"uri": "d",
-		"alias": "d"
+		"alias": "dotfiles"
 	},
 	{
 		"uri": "s",
-		"alias": "s"
+		"alias": "suse"
+	},
+	{
+		"uri": "e",
+		"alias": "env"
 	}
 ]
 EOF
